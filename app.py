@@ -49,13 +49,13 @@ def predict_disease():
         prediction_diabetes=model_diabetes.predict_proba(row_df_diabetes)
         output='{0:.{1}f}'.format(prediction_diabetes[0][1], 2)
         output_diabetes = str(float(output)*100)+'%'
-        course_diabetes = {'output_diabetes' : output_diabetes,'Course_number' : ["diabetes","taking-your-medication","yoga","hospital-stays"] , 'article_diabetes' : ["a","b","c"] } 
+        course_diabetes = {'output_diabetes' : output_diabetes,'Course_number' : ["diabetes","taking-your-medication","yoga"] , 'article_diabetes' : ["1005","1006","1008"] } 
         
         
         #for heart 0 no or 1 yes RandomForestClassifier 84%
         values = np.asarray([46,1,2,150,231,0,1,147,0,3.6,1,0,2])
         output_heart = str(model_heart.predict(values.reshape(1, -1))[0])
-        course_heart = {'output_heart' : output_heart,'Course_number' : ["heart-failure","anxiety-mini-course","hospital-stays","yoga"], 'article_heart' : ["a","b","c"]}
+        course_heart = {'output_heart' : output_heart,'Course_number' : ["heart-failure","anxiety-mini-course","yoga"], 'article_heart' : ["1001","1007","1004"]}
         
         
        
@@ -63,9 +63,9 @@ def predict_disease():
         #for kidney 0 no or 1 yes RandomForestClassifier 100% on test data
         values = np.asarray([40,80,0,0,0,0,0,0,140,10,1.2,5,10400,0,0,0,0,0])
         output_kidney = str(model_kidney.predict(values.reshape(1, -1))[0])
-        course_kidney = {'output_kidney' : output_kidney,'Course_number' : ["kidney","msk","taking-your-medication","yoga"], 'article_kidney' : ["a","b","c"]}
+        course_kidney = {'output_kidney' : output_kidney,'Course_number' : ["kidney","msk","taking-your-medication"], 'article_kidney' : ["1003","1005","1007"]}
         
-        data = {"clinical_data" : {"blood_pressure" : 80, "hypertension" : 0, "BMI" : 33.6, "Insulin" : 0}}
+        data = {"clinical_data" : {"blood_pressure" : 80, "hypertension" : 0, "BMI" : 33.6, "Insulin" : 0,"blood_sugar" : 280 , "heart_rate" : 125}}
         
         total_response = {"Heart" : course_heart, "Diabetes" : course_diabetes, "Kidney" : course_kidney, "data" : data}
         
