@@ -34,5 +34,5 @@ jobs:
       with:
         app-name: predict-disease
         slot-name: Production
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_406E3C1EF42A46A1A45F89ADAC394015 }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6AC0F993CB7D4DB4B9361C2244B0A02C }}
 
