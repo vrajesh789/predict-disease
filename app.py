@@ -65,8 +65,8 @@ def predict_disease():
         output_kidney = str(model_kidney.predict(values.reshape(1, -1))[0])
         course_kidney = {'output_kidney' : output_kidney,'Course_number' : ["kidney","msk","taking-your-medication"], 'article_kidney' : ["1003","1005","1007"]}
         
-        data = {"clinical_data" : {"BMI" : 37.8 , "blood_pressure" : 115, "blood_sugar" : 155}}
-        hist_data = {"hist_data" : {"BMI" : [29.3, 31.1, 32.8, 34.7, 35.5, 36.6, 37.8], "blood_pressure" : [110, 116, 120, 115, 109, 112, 115], "blood_sugar" : [156, 148, 150, 158, 160, 151, 155]}}
+        data = {"clinical_data" : {"BMI" : 32 , "blood_pressure" : 115, "blood_sugar" : 139}}
+        hist_data = {"hist_data" : {"BMI" : [29.3, 31.1, 32.8, 32.7, 32.5, 32.6, 32.0], "blood_pressure" : [110, 116, 120, 115, 109, 112, 115], "blood_sugar" : [156, 148, 150, 158, 160, 151, 155]}}
         total_response = {"Heart" : course_heart, "Diabetes" : course_diabetes, "Kidney" : course_kidney, "data" : data, "hist_data" : hist_data}
         
     elif(userid == 102):
